@@ -10,7 +10,6 @@ scenarios("../features/authentication.feature")
 def api_url():
     return "https://videogamedb.uk/api"
 
-
 @when("I authenticate with valid credentials")
 def authenticate_with_valid_credentials(api_url):
     auth_url = f"{api_url}/authenticate"

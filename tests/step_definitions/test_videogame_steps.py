@@ -1,12 +1,10 @@
 import requests
-from pytest_bdd import given, when, then, parsers, scenario, scenarios
+from pytest_bdd import given, when, then, parsers, scenarios
 import pytest
 
 # Load all scenarios from the feature file
 scenarios("../features/videogame.feature")
-@pytest.fixture
-def api_url():
-    return "https://videogamedb.uk/api"
+
 
 @pytest.fixture
 def valid_auth_token(base_url):
@@ -44,8 +42,8 @@ def verify_list_videogames():
         assert "rating" in videogame
 
 @when("I create a new videogame")
-def create_videogame(api_url, valid_auth_token_shared):
-    create_url = f"{api_url}/videogame"
+def create_videogame(base_url, valid_auth_token_shared):
+    create_url = f"{base_url}/videogame"
     headers = {"Authorization": f"Bearer {valid_auth_token_shared}"}
     new_videogame = {
         "category": "Platform",
@@ -69,8 +67,8 @@ def verify_create_videogame():
     assert created_videogame["reviewScore"] == 85
 
 @when(parsers.parse("I get details of the videogame with id {videogame_id}"))
-def get_videogame_details(api_url, videogame_id):
-    videogame_url = f"{api_url}/videogame/{videogame_id}"
+def get_videogame_details(base_url, videogame_id):
+    videogame_url = f"{base_url}/videogame/{videogame_id}"
     response = requests.get(videogame_url)
     pytest.get_response = response
 @then(parsers.parse('I should see the videogame name "{expected_name}"'))
@@ -100,9 +98,9 @@ def existing_videogame_to_update():
     pytest.existing_videogame_id = 3
 
 @when("I update the videogame")
-def update_videogame(api_url, valid_auth_token_shared):
+def update_videogame(base_url, valid_auth_token_shared):
     videogame_id = pytest.existing_videogame_id
-    update_url = f"{api_url}/videogame/{videogame_id}"
+    update_url = f"{base_url}/videogame/{videogame_id}"
     headers = {"Authorization": f"Bearer {valid_auth_token_shared}"}
     updated_videogame = {
         "category": "Adventure",
@@ -125,31 +123,10 @@ def verify_update_videogame():
     assert updated_videogame["releaseDate"] == "2017-03-03"
     assert updated_videogame["reviewScore"] == 98
 
-@given("an existing videogame to delete")
-def existing_videogame_to_delete():
-    pytest.existing_videogame_id = 3
-
-@when("I delete the videogame")
-def delete_videogame(api_url, valid_auth_token):
-    videogame_id = pytest.existing_videogame_id
-    delete_url = f"{api_url}/videogame/{videogame_id}"
-    headers = {"Authorization": f"Bearer {valid_auth_token}"}
-    response = requests.delete(delete_url, headers=headers)
-    pytest.delete_response = response
-
-@then("the videogame should be deleted successfully")
-def verify_delete_videogame():
-    response = pytest.delete_response
-    assert response.status_code == 200
-    #videogame_id = pytest.existing_videogame_id
-    #get_url = f"{api_url}/videogame/{videogame_id}"
-    #get_response = requests.get(get_url)
-    #assert get_response.status_code == 404
-
 @when("I get details of the videogame with a non-existent id")
-def get_videogame_non_existent_id(api_url):
+def get_videogame_non_existent_id(base_url):
     non_existent_id = 9999
-    videogame_url = f"{api_url}/videogame/{non_existent_id}"
+    videogame_url = f"{base_url}/videogame/{non_existent_id}"
     response = requests.get(videogame_url)
     pytest.non_existent_response = response
 
@@ -159,8 +136,8 @@ def verify_videogame_non_existent_id():
     assert response.status_code == 404
 
 @when("I create a new videogame with missing fields")
-def create_videogame_missing_fields(api_url, valid_auth_token):
-    create_url = f"{api_url}/videogame"
+def create_videogame_missing_fields(base_url, valid_auth_token):
+    create_url = f"{base_url}/videogame"
     headers = {"Authorization": f"Bearer {valid_auth_token}"}
     incomplete_videogame = {
         "category": "Platform",

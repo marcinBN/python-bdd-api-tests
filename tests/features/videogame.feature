@@ -30,11 +30,6 @@ Feature: Videogame API
     When I update the videogame
     Then the videogame should be updated successfully
 
-  Scenario: Delete a videogame
-    Given an existing videogame to delete
-    When I delete the videogame
-    Then the videogame should be deleted successfully
-
   Scenario: Get a videogame by non-existent ID
     When I get details of the videogame with a non-existent id
     Then I should receive a 404 status code

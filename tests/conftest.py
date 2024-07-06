@@ -6,10 +6,6 @@ def pytest_addoption(parser):
     parser.addoption("--env", action="store", default="prod", help="Description of the env option.")
 
 @pytest.fixture(scope='session')
-def base_url_(request):
-    return "https://videogamedb.uk/api"
-
-@pytest.fixture(scope='session')
 def base_url(request):
     env = request.config.getoption('--env')
     if env == 'dev':
