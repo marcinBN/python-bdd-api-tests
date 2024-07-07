@@ -1,6 +1,7 @@
 import requests
-from pytest_bdd import given, when, then, parsers, scenarios
 import pytest
+from pytest_bdd import given, when, then, parsers, scenarios
+from dto.videogame import Videogame
 
 # Load all scenarios from the feature file
 scenarios("../features/videogame.feature")
@@ -31,15 +32,28 @@ def list_all_videogames(base_url):
 def verify_list_videogames():
     response = pytest.list_response
     assert response.status_code == 200
-    videogames = response.json()
-    assert isinstance(videogames, list)
-    for videogame in videogames:
+
+    # OPTION 1: DESERIALIZING RESPONSE TO GENERIC LIST
+    videogames_ = response.json()
+    assert isinstance(videogames_, list)
+    for videogame in videogames_:
         assert "id" in videogame
         assert "name" in videogame
         assert "releaseDate" in videogame
         assert "reviewScore" in videogame
         assert "category" in videogame
         assert "rating" in videogame
+
+    # OPTION 2: DESERIALIZING RESPONSE TO DTO
+    videogames_json = response.json()
+    videogames = [Videogame.from_dict(vg) for vg in videogames_json]
+    # Perform assertions
+    assert isinstance(videogames, list)
+    assert len(videogames) > 0
+    assert all(isinstance(vg, Videogame) for vg in videogames)
+    # Example assertion
+    first_game = videogames[0]
+    assert first_game.name == "Resident Evil 4"
 
 @when("I create a new videogame")
 def create_videogame(base_url, valid_auth_token_shared):

@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5cbbfef-580d-4f4c-bc38-45df22cb4b4d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/step_definitions/dto/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/step_definitions/dto/videogame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/features/bank_transactions.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/features/bank_transactions_param.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/features/bank_transactions_scenario_outline.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/features/videogame.feature" beforeDir="false" afterPath="$PROJECT_DIR$/tests/features/videogame.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/step_definitions/test_authentication_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/step_definitions/test_authentication_steps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/step_definitions/test_bank_transactions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/step_definitions/test_bank_transactions_param.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/step_definitions/test_bank_transactions_scenario_outline.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/step_definitions/test_videogame_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/step_definitions/test_videogame_steps.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,16 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in test_videogame_steps.py.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Marcin/PycharmProjects/hellowWorldBDD"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in test_videogame_steps.py.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Marcin/PycharmProjects/hellowWorldBDD&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Marcin\PycharmProjects\hellowWorldBDD" />
@@ -82,6 +75,19 @@
       <option name="presentableId" value="Default" />
       <updated>1718650607234</updated>
     </task>
+    <task id="LOCAL-00001" summary="remove redundant tests">
+      <option name="closed" value="true" />
+      <created>1720295144618</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720295144618</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove redundant tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove redundant tests" />
   </component>
 </project>
