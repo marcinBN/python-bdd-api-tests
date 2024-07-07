@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5cbbfef-580d-4f4c-bc38-45df22cb4b4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/step_definitions/dto/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/step_definitions/dto/videogame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/step_definitions/test_videogame_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/step_definitions/test_videogame_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +82,20 @@
       <option name="project" value="LOCAL" />
       <updated>1720295144618</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="deserialize api response to DTO">
+      <option name="closed" value="true" />
+      <created>1720374409063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720374409063</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove redundant tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove redundant tests" />
+    <MESSAGE value="deserialize api response to DTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="deserialize api response to DTO" />
   </component>
 </project>

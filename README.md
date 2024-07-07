@@ -1,22 +1,33 @@
-# Pytest BDD Testing Example
-This repo contains the sample code for the article - [A Complete Guide To Behavior-Driven Testing With Pytest BDD](https://pytest-with-eric.com/bdd/pytest-bdd/).
+# Template for RestAPI tests with BDD
+###### Based on Python, pytest and Gherkin
 
-# Requirements
-* Python (3.12)
+To do:
+- [x] Gherking scenarios
+- [x] Deserializing API response to DTO
+- [ ] Custom logging
 
-Please install the dependencies via the `Pipfile` file using 
-```bash
-$ pipenv shell  
-$ pipenv install --dev
+
+## FEATURES
+
++ Cucumber-style scenarios
+```python
+  @details
+  Scenario Outline: Get details of a specific videogame-new
+    When I get details of the videogame with id <videogame_id>
+    Then I should see the videogame name "<expected_name>"
+
+    Examples:
+      | videogame_id | expected_name   |
+      | 1            | Resident Evil 4 |
+      | 2            | Gran Turismo 3  |
 ```
-If you don't have Pip installed, please follow instructions online on how to do it.
 
-See [this guide](https://realpython.com/pipenv-guide/) for instructions how to use Pipenv.
-
-# How To Run the Unit Tests
-To run the Unit Tests from the root of the repo, run
++ Defining different environments with CLI parameters
 ```bash
-pytest -v
+pytest --env prod
 ```
 
-If you have any questions about the project, please raise an Issue on GitHub. 
++ HTML reporting
+```bash
+pytest --html=report.html
+```
